@@ -1,0 +1,61 @@
+{
+    "configurations": [
+        {
+            "name": "Django Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/manage.py",
+            "args": [
+              "runserver",
+              "0.0.0.0:8000"
+            ],
+            "django": true
+          }
+          
+
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Containers: Python - Django",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/app"
+                    }
+                ],
+                "projectType": "django"
+            }
+        }
+    ]
+}
