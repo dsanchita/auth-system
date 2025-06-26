@@ -25,7 +25,7 @@ export default function DashboardPage() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen">
       <div className="space-y-8">
-        {/* Header Section - Changed to white background */}
+        
         <div className="text-center bg-white p-6 rounded-2xl shadow-md">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome Back, {user.full_name}</h1>
           <p className="text-lg text-gray-600">Here's your profile information</p>

@@ -21,7 +21,6 @@ export default function RegisterPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
- // In the handleSubmit function:
 const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
