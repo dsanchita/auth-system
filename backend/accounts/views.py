@@ -87,9 +87,15 @@ class UserProfileView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     
     def get(self, request):
-        serializer = UserSerializer(request.user)
-        return Response(serializer.data)
-    
+        try:
+            serializer = UserSerializer(request.user)
+            return Response(serializer.data)
+        except Exception as e:
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     
